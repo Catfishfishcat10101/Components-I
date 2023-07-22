@@ -14,7 +14,7 @@ function menuMaker(linksArray) {
   const menuWrapper = document.createElement('div');
   const menuList = document.createElement('ul');
 
-  menuWrapper.appendChild('menuList');
+  menuWrapper.appendChild(menuList);
 
   menuWrapper.classList.add('menu');
 
@@ -22,7 +22,8 @@ function menuMaker(linksArray) {
     const link = document.createElement('li');
     link.textContent = linkText;
     menuList.appendChild(link);
-  })
+    });
+  
 
   const hamMenu = document.querySelector('.menu-button');
 

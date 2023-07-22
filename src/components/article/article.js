@@ -110,37 +110,44 @@ function articleMaker(articleObj) {
   const articleWrapper = document.createElement('div');
   articleWrapper.classList.add('article');
 
+  const articleTitle = document.createElement('h2');
+  articleTitle.textContent = articleObj.title;
   articleWrapper.appendChild(articleTitle);
+
+  const articleDate = document.createElement('p');
+  articleDate.classList.add('date');
+  articleDate.textContent = articleObj.date;
   articleWrapper.appendChild(articleDate);
+
+  
+  const articleParagraphOne = document.createElement('p');
+  articleParagraphOne.textContent = articleObj.firstParagraph;
   articleWrapper.appendChild(articleParagraphOne);
+
+  const articleParagraphTwo = document.createElement('p');
+  articleParagraphTwo.textContent = articleObj.secondParagraph;
   articleWrapper.appendChild(articleParagraphTwo);
+
+  const articleParagraphThree = document.createElement('p');
+  articleParagraphThree.textContent = articleObj.thirdParagraph;
   articleWrapper.appendChild(articleParagraphThree);
+
+  const expandButton = document.createElement('button');
+  expandButton.classList.add('expandButton');
+  expandButton.textContent = "+";
   articleWrapper.appendChild(expandButton);
 
-  articleTitle.textContent = articleObj.title;
-  articleDate.textContent = articleObj.date;
-  articleParagraphOne.textContent = articleObj.firstParagraph;
-  articleParagraphTwo.textContent = articleObj.secondParagraph;
-  articleParagraphThree.textContent = articleObj.thirdParagraph;
-  expandButton.textContent = "+";
-
-
-
+    
   expandButton.addEventListener('click', () => {
     articleWrapper.classList.toggle('article-open');
-  })
-
+  });
+  
   return articleWrapper;
 }
 
 data.forEach(article => {
   document.querySelector('div.articles').appendChild(articleMaker(article));
-})
-
-articleMaker();
-
-
-
+});
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
