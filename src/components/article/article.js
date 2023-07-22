@@ -146,7 +146,8 @@ function articleMaker(articleObj) {
 }
 
 data.forEach(article => {
-  document.querySelector('div.articles').appendChild(articleMaker(article));
+
+document.querySelector('div.articles').appendChild(articleMaker(article));
 });
 
 /*
