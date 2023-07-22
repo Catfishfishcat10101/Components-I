@@ -108,16 +108,7 @@ const data = [
 
 function articleMaker(articleObj) {
   const articleWrapper = document.createElement('div');
-  const articleTitle = document.createElement('h2');
-  const articleDate = document.createElement('p');
-  const articleParagraphOne = document.createElement('p');
-  const articleParagraphTwo = document.createElement('p');
-  const articleParagraphThree = document.createElement('p');
-  const expandButton = document.createElement('span');
-
   articleWrapper.classList.add('article');
-  articleDate.classList.add('date');
-  expandButton.classList.add('expandButton');
 
   articleWrapper.appendChild(articleTitle);
   articleWrapper.appendChild(articleDate);
