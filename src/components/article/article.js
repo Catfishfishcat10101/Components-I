@@ -102,7 +102,35 @@ function articleMaker(articleObj) {
   articleWrapper.classList.add('article');
   articleDate.classList.add('date');
   expandButton.classList.add('expandButton');
+
+  articleWrapper.appendChild(articleTitle);
+  articleWrapper.appendChild(articleDate);
+  articleWrapper.appendChild(articleParagraphOne);
+  articleWrapper.appendChild(articleParagraphTwo);
+  articleWrapper.appendChild(articleParagraphThree);
+  articleWrapper.appendChild(expandButton);
+
+  articleTitle.textContent = articleObj.title;
+  articleDate.textContent = articleObj.date;
+  articleParagraphOne.textContent = articleObj.firstParagraph;
+  articleParagraphTwo.textContent = articleObj.secondParagraph;
+  articleParagraphThree.textContent = articleObj.thirdParagraph;
+
+
+
+  expandButton.addEventListener('click', () => {
+    articleWrapper.classList.toggle('article-open');
+  })
+
+  return articleWrapper;
 }
+
+data.forEach(article => {
+  document.querySelector('div.articles').appendChild(articleMaker(article));
+})
+
+articleMaker();
+
 
 
 
